@@ -61,9 +61,9 @@ function processTest(args) {
       count++;
 
          device.publish('iot/garden', JSON.stringify({
-           	row : 222,
-	    	pos : 222,
-		moisture: 222
+           	row : 111,
+	    	pos : 111,
+		moisture: 111
          }));
       
    }, Math.max(args.delay, minimumDelay)); // clip to minimum
