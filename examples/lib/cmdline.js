@@ -103,7 +103,7 @@ module.exports = function(description, args, processFunction, argumentHelp) {
          protocol: 'mqtts',
          clientId: clientIdDefault,
          privateKey: 'private.pem.key', 
-         clientCert: 'certificate.pem.key',
+         clientCert: 'certificate.pem.crt',
          caCert: 'root-CA.crt',
          testMode: 1,
          /* milliseconds */

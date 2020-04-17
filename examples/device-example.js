@@ -30,10 +30,11 @@ function processTest(args) {
    // Once connected, it will emit events which our application can
    // handle.
    //
+
    const device = deviceModule({
-      keyPath: "../certs/private.pem.key",
-      certPath: "../certs/certificate.pem.crt",
-      caPath: "../certs/root-CA.crt",
+      keyPath: args.privateKey,
+      certPath: args.clientCert, 
+      caPath: args.caCert,
       clientId: args.clientId,
       region: args.region,
       baseReconnectTimeMs: args.baseReconnectTimeMs,
@@ -61,9 +62,9 @@ function processTest(args) {
       count++;
 
          device.publish('iot/garden', JSON.stringify({
-           	row : 111,
-	    	pos : 111,
-		moisture: 111
+           	row : 444,
+	    	pos : 444,
+		moisture: 444 
          }));
       
    }, Math.max(args.delay, minimumDelay)); // clip to minimum

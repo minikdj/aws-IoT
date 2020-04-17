@@ -94,6 +94,7 @@ module.exports = function(options) {
    if (filesys.existsSync(options.certPath)) {
       options.cert = filesys.readFileSync(options.certPath);
    } else if (!isUndefined(options.certPath)) {
+	   console.error(options.certPath)
       throw new Error(exceptions.INVALID_CERT_PATH_OPTION);
    }
    if (filesys.existsSync(options.caPath)) {
