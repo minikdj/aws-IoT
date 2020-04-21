@@ -59,12 +59,25 @@ function processTest(args) {
    }
 */
    timeout = setInterval(function() {
-      count++;
+      	count++;
+        
+	var date = new Date();
+	var dateStr =
+		("00" + (date.getMonth() + 1)).slice(-2) + "-" +
+  		("00" + date.getDate()).slice(-2) + "-" +
+  		date.getFullYear() + " " +
+  		("00" + date.getHours()).slice(-2) + ":" +
+  		("00" + date.getMinutes()).slice(-2) + ":" +
+  		("00" + date.getSeconds()).slice(-2);
 
-         device.publish('iot/garden', JSON.stringify({
-           	row : 444,
-	    	pos : 444,
-		moisture: 444 
+	
+	device.publish('iot/garden', JSON.stringify({
+           	GardenID : 0,
+		humidity : Math.round(Math.random() * 100),
+		light : Math.round(Math.random() * 2000),
+		'soil moisture': Math.round(Math.random() * 5000),
+		temperature : Math.round(Math.random() * 110),
+		timestamp : dateStr 
          }));
       
    }, Math.max(args.delay, minimumDelay)); // clip to minimum
